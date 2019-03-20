@@ -2,8 +2,8 @@ const http = require('http')
 const port = 3000
 
 const requestHandler = (request, response) => {
-  console.log(request.url)
-  response.end('Hello Node.js Server!')
+  response.writeHead(200, {'Content-Type': 'text/plain'});
+  response.end(request.url);
 }
 
 const server = http.createServer(requestHandler)
